@@ -427,6 +427,9 @@ class _AddNotesState extends State<AddNotes> with WidgetsBindingObserver {
         : descriptionController.text;
     String descriptionData = descriptionController.text;
     String s = DateFormat.yMMMd().format(DateTime.now());
+    SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
+    sharedPreferences.setDouble("init_location_lat",null);
+    sharedPreferences.setDouble("init_location_long",null);
     if (widget.edit == true) {
       NoteDatabaseProvider.db.updateNote(new Note(
           id: widget.note.id,
