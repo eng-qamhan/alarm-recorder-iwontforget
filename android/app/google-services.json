@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "850379409433",
+    "firebase_url": "https://mysmartnote-3b2d5.firebaseio.com",
+    "project_id": "mysmartnote-3b2d5",
+    "storage_bucket": "mysmartnote-3b2d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850379409433:android:ab458ed9b6d0e6b5988288",
+        "android_client_info": {
+          "package_name": "iwontforget.note.com.alarm_recorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850379409433-d0om2ud2n2kr72stsbql64i0d9h3b0a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJSGArh3nt4mNyWlCHeStWJix1_Yhf7bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850379409433-d0om2ud2n2kr72stsbql64i0d9h3b0a9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

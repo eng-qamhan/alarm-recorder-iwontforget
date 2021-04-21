@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "850379409433",
+    "firebase_url": "https://mysmartnote-3b2d5.firebaseio.com",
+    "project_id": "mysmartnote-3b2d5",
+    "storage_bucket": "mysmartnote-3b2d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850379409433:android:ab458ed9b6d0e6b5988288",
+        "android_client_info": {
+          "package_name": "alarmrecorder.example.com.alarm_recorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850379409433-d0om2ud2n2kr72stsbql64i0d9h3b0a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJSGArh3nt4mNyWlCHeStWJix1_Yhf7bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850379409433-d0om2ud2n2kr72stsbql64i0d9h3b0a9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "850379409433-oriqls1gmbo5l6qp0jrupqij8u1tatbt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bundle.recorder1234"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2529431792707464~2909762150"
+    }
+  ],
+  "configuration_version": "1"
+}
