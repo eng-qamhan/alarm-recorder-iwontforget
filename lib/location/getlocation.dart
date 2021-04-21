@@ -120,6 +120,11 @@ class GetLocation extends ChangeNotifier {
                     "\n";
             var point = LatLng(data.latitude, data.longitude);
             points.add(point);
+            SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
+            if(sharedPreferences.getDouble("init_location_lat")==null){
+              sharedPreferences.setDouble("init_location_lat",data.latitude);
+              sharedPreferences.setDouble("init_location_long",data.longitude);
+            }
             print("location 1  found");
             print(imgString);
             if (id != null && title != null) {
