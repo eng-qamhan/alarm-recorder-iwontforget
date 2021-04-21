@@ -47,8 +47,11 @@ void getdistanceBetween (int id, String title, String body, String imgString, St
      }
      else
      {
-    double distanceInMeters = await Geolocator.distanceBetween(
-    list.first.latitude, list.first.longitude, list.last.latitude, list.last.longitude);
+     SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
+       double distanceInMeters = await Geolocator.distanceBetween(
+           sharedPreferences.getDouble("init_location_lat"), sharedPreferences.getDouble("init_location_long"), list.last.latitude, list.last.longitude);
+    /*double distanceInMeters = await Geolocator.distanceBetween(
+    list.first.latitude, list.first.longitude, list.last.latitude, list.last.longitude);*/
     print("distance meter $distanceInMeters");
     print("$id $title $body");
 
