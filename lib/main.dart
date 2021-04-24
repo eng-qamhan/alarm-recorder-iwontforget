@@ -262,24 +262,50 @@ class LocalNotification {
         payload: customPayload);
   }
 
-  showNotification(
-      int id, String title, String body, imgString, String payload) async {
-    await notification(id, title, body, imgString, payload);
+showNotification({
+        bool randomNotifID:false,
+        bool withSound:true,
+        int id,
+        String title,
+        String body,
+        String imgPath,
+        String payload}) async {
+    await notification(randomNotifID: randomNotifID,withSound:withSound,id:id, title:title, body:body, imgPath:imgPath, payload:payload);
   }
 
-  Future<void> notification(
-      int id, String title, String body, String imgPath, String payload) async {
-    var androidNotificationDetails = AndroidNotificationDetails(
-        '$id', title, body,
-        importance: Importance.max,
-        priority: Priority.high,
-        ongoing: true,
-        enableVibration: true,
-        ticker: 'test ticker',
-        sound: RawResourceAndroidNotificationSound('so_no.aiff'),
-        playSound: true);
+  Future<void> notification({
+      bool randomNotifID:false,
+      bool withSound:true,
+      int id,
+      String title,
+      String body,
+      String imgPath,
+      String payload}) async {
+
+    var androidNotificationDetails;
+    if(withSound){
+      androidNotificationDetails = AndroidNotificationDetails(
+        //'$id', title, body,
+          'default', 'default', 'default',
+          importance: Importance.max,
+          priority: Priority.high,
+          ongoing: true,
+          enableVibration: true,
+          ticker: 'test ticker',
+          sound: RawResourceAndroidNotificationSound('so_no'),
+          playSound: true);
+    }else{
+      androidNotificationDetails = AndroidNotificationDetails(
+          'default_no_sound', 'default_no_sound', 'default_no_sound',
+          importance: Importance.max,
+          priority: Priority.high,
+          ongoing: true,
+          enableVibration: true,
+          ticker: 'test ticker');
+    }
+
     IOSNotificationDetails iosNotificationDetails = IOSNotificationDetails(
-        presentSound: true,
+        presentSound: withSound,
         presentAlert: true,
         presentBadge: true,
         sound: 'so_no.aiff');
@@ -288,7 +314,11 @@ class LocalNotification {
     Note newNote =
         Note(id: id, imagePath: imgPath, title: title, description: body);
     payload = newNote.toRawJson();
-    await myApp.flutterLocalNotificationsPlugin
+    if(randomNotifID)
+      await myApp.flutterLocalNotificationsPlugin
+          .show(Random().nextInt(10000), 'لقد وصلت الى المسافة المطلوبة', "تم ايقاف عملية التتبع الان", notificationDetails, payload: payload);
+    else
+      await myApp.flutterLocalNotificationsPlugin
         .show(id, title, body, notificationDetails, payload: payload);
   }
 }
