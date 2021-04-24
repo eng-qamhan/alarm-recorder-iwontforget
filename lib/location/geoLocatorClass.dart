@@ -57,14 +57,16 @@ void getdistanceBetween (int id, String title, String body, String imgString, St
 
     if (distanceInMeters >= xMeter) {
       print(" you are so far");
-      notif(id, title, body, imgString, payload, xMeter);
+       _localNotification.showNotification(randomNotifID: true,withSound: false,id:id, title:title, body:body, imgPath:imgString, payload:payload);
+       await Future.delayed(Duration(seconds: 2));
+       _localNotification.showNotification(id:id, title:title, body:body, imgPath:imgString, payload:payload);
       getLocation.onStop();
 
     }
   }
 }
 notif(int id, String title, String body, String imgString, String payload, double xMeter) async {
-  _localNotification.showNotification( id, title, body, imgString, payload) ;
+  _localNotification.showNotification(id:id, title:title, body:body, imgPath:imgString, payload:payload) ;
   }
 
 getcurrent()async{
